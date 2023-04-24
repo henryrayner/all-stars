@@ -1,0 +1,20 @@
+.custom {
+    background-color: #B46CAF !important;
+    padding: 0px !important;
+}
+
+.logo {
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-right:20px !important;
+    margin-left:-20px !important;
+}
+
+.dropdown-toggle::after {
+    display: none !important; 
+  }
+
+.sign-in {
+    align-items: right;
+    align-self: right;
+}

@@ -1,0 +1,19 @@
+html, body {
+    text-align: center;
+    font-family: "Inter",sans-serif;
+}
+
+
+.modal {
+    position: fixed;
+    top: 200px;
+    left: 35%;
+    right: 0;
+    bottom: 0;
+    width: 30%;
+    max-height: 50%;
+    background-color: white;
+    display: inline-block;
+    align-items: center !important;
+    padding: 30px;
+}

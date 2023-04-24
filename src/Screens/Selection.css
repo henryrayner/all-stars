@@ -1,0 +1,125 @@
+html, body {
+    text-align: center;
+    background-color: #FFB6E2;
+    min-height: 100vh;
+}
+
+.selection-banner {
+    background-color: #FF3797;
+    color:white;
+    height: 50px;
+    text-align: center !important;
+    width: 100vw;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.all-stars {
+    width: 68%;
+    margin: auto;
+    display: inline-block;
+    line-height: 50px;
+    font-size: 16px;
+}
+
+.icon {
+    width: 130px;
+    min-height: 130px;
+    background-color: white;
+    border-radius: 100%;
+    display: inline-block;
+    z-index: 1;
+}
+
+.submit {
+    background-color: #FF3797;
+    border-radius: 50px;
+    width: 250px;
+    margin: 0px;
+    margin-top: 32px;
+    margin-right: 50px;
+    color: white;
+    font-size: 25px;
+    border-color: black;
+    border-style:solid;
+    z-index: 1;
+}
+
+.disabled {
+    opacity: 0.5;
+    cursor:not-allowed;
+    pointer-events: auto;
+}
+
+.icon-container {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    margin:15px !important;
+    border-radius: 100%;
+    display: inline-block;
+    background-color: #FF3797;
+    margin-bottom: 50px !important; 
+}
+  
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 131px;
+    width: 131px;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #FF3797 !important;
+    border-radius: 100%;
+    border: 3px black solid;
+  }
+
+.picked {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 131px;
+    width: 131px;
+    opacity: 0.5;
+    background-color: #FF3797 !important;
+    border-radius: 100%;
+    border: 3px black solid;
+    transition: .5s ease;
+}
+  
+.icon-container:hover .overlay {
+    opacity: 1;
+    border: 5px black dashed;
+    cursor:pointer;
+    pointer-events: auto;
+  }
+
+label {
+    position:absolute;
+    top: 140px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    line-height: 1;
+    font-weight: 800;
+}
+
+
+.instructions-top {
+    margin-top: 32px;
+}
+
+.instructions-bottom {
+    margin-bottom: 32px;
+}
+
+.undo {
+    width: 30px;
+    min-height: 30px;
+}

@@ -1,0 +1,45 @@
+.teams-banner {
+    background-color: #FF3797;
+    color:white;
+    height: 50px;
+    text-align: center !important;
+    width: 100vw;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.teams-grid {
+    max-height: 100vh;
+    max-width: 70vw;
+    margin: auto;
+    margin-top: 50px !important;
+}
+
+.team-name {
+    width: 5%;
+    text-align:right;
+    font-size: 36px !important;
+    font-weight: bold !important;
+}
+.team-queens {
+    width:95%;
+    padding: 0;
+}
+
+.queen {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    display: inline-block;
+    margin: 0px 5px;
+}
+
+
+.rank-label {
+    display: inline-block;
+    margin: 0px 5px;
+    font-size: 36px !important;
+    font-weight: bold !important;
+    width: 50px;
+    text-align: center;
+}

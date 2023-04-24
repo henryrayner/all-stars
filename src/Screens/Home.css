@@ -1,0 +1,56 @@
+html, body {
+    font-family: "Inter",sans-serif;
+    overflow: hidden;
+    text-align: center;
+    background-color: #FFB6E2;
+    min-height: 100vh;
+}
+
+.banner {
+    background-color: #FF3797;
+    color:white;
+    height: 100px;
+    text-align: center !important;
+    width: 100vw;
+    font-size: 30px;
+    padding: 5px 0;
+    font-weight: bold;
+}
+
+.main-image {
+    width: 100vw;
+    clip-path: inset(225px 0px 225px 0);
+    margin-top: -225px;
+    margin-bottom: -225px;
+}
+
+.button-bar {
+    margin: auto;
+    width: 50%;
+}
+
+.button {
+    background-color: #FF3797;
+    border-radius: 50px;
+    width: 250px;
+    margin: 50px;
+    color: white;
+    font-size: 25px;
+    border-color: black;
+    border-style:solid;
+    opacity: 1;
+    transition: opacity 0.3s linear;
+}
+
+.button:hover {
+    border-style:dashed;
+    opacity: .5;
+}
+
+.countdown {
+    font-weight: bold;
+    color: #FF3797;
+    font-size: 25px;
+    line-height: 10px;
+    padding-top: 0px;
+}
