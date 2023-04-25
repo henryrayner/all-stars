@@ -5,11 +5,15 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import './Navbar.css';
 import { useState } from 'react';
 import LoginModal from '../Modals/LoginModal';
-import Lipstick from './Lipstick';
+import Lipstick from "./Lipstick";
 
 const Navigation = (props) => {
     const loginVisibleFlag = props.loginVisibleFlag;
     const setLoginVisibleFlag = props.setLoginVisibleFlag;
+
+    const lipstickProps = {
+        text: 'text'
+    }
 
     return(
             <Navbar expand="lg" className="custom">
@@ -18,8 +22,8 @@ const Navigation = (props) => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="container-fluid">
-                    <Nav.Link href="/"><Lipstick/></Nav.Link>
-                    <Nav.Link href="/makeSelection"><img src={require("../Images/mySelection.png")} width="125px"/></Nav.Link>
+                    <Nav.Link href="/" className="lipstick"><Lipstick text="Home"/></Nav.Link>
+                    <Nav.Link href="/makeSelection" className="lipstick"><Lipstick text="Home"/></Nav.Link>
                     <NavDropdown title={<img src={require("../Images/leaderboard.png")} width="125px"/>} id="basic-nav-dropdown">
                         <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.2">

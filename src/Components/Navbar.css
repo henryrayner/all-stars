@@ -1,3 +1,9 @@
+html, body {
+    text-align: center;
+    background-color: #FFB6E2;
+    min-height: 100vh;
+}
+
 .custom {
     background-color: #B46CAF !important;
     padding: 0px !important;
@@ -17,4 +23,8 @@
 .sign-in {
     align-items: right;
     align-self: right;
+}
+
+.lipstick {
+    color: white !important;
 }

@@ -1,13 +1,19 @@
-.image-container {
+.container {
     position: relative;
-    display:inline-block;
   }
-  
-  .text-overlay {
+
+.container h1 {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 10px;
-  }
+    transform: translate(0, -50%);
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.image-container {
+    text-align: left;
+}
