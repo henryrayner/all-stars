@@ -1,19 +1,23 @@
-.container {
-    position: relative;
-  }
-
-.container h1 {
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -50%);
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    z-index: 1;
+.lipstick-container {
+  position: relative;
+  max-width: 125px;
+  max-height: 50px;
 }
 
-.image-container {
-    text-align: left;
+.image {
+  max-height: 50px;
+}
+
+.lipstick-container h1 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+  padding: 0;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 50px;
+  max-width: 89px;
+  text-align: center;
+  white-space: nowrap;
 }

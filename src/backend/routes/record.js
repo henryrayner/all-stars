@@ -41,7 +41,8 @@ recordRoutes.route("/record/add").post(function (req, response) {
  let db_connect = dbo.getDb();
  let myobj = {
    username: req.body.username,
-   password: req.body.password
+   password: req.body.password,
+   draftOrder: []
  };
  db_connect.collection("Users").insertOne(myobj, function (err, res) {
    if (err) throw err;
@@ -56,7 +57,8 @@ recordRoutes.route("/update/:id").post(function (req, response) {
  let newvalues = {
    $set: {
      username: req.body.username,
-     password: req.body.password
+     password: req.body.password,
+     draftOrder: req.body.draftOrder
    },
  };
  db_connect

@@ -22,9 +22,6 @@ const TeamsScreen = () => {
         if(data !== 'null'){
             await setUsers(data);
         }
-        else{
-            console.log(data);
-        }
     }
 
     return (

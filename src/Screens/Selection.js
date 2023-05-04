@@ -4,7 +4,7 @@ import './Selection.css';
 import SubmitEntriesModal from '../Modals/SubmitEntriesModal';
 
 
-const SelectionScreen = () => {
+const SelectionScreen = (props) => {
     const [submitModalFlag, setSubmitModalFlag] = useState(false)
     const [submitEnabledFlag, setSubmitEnabledFlag] = useState(false)
 
@@ -57,6 +57,8 @@ const SelectionScreen = () => {
     const [overlays, setOverlays] = useState([currOverlayImage,currOverlayImage,currOverlayImage,currOverlayImage,currOverlayImage,currOverlayImage,currOverlayImage,currOverlayImage,currOverlayImage,currOverlayImage,currOverlayImage, currOverlayImage])
     const [actionQueue, setActionQueue] = useState([])
     const [selections, setSelections] = useState([]);
+    const [draftOrder, setDraftOrder] = useState([]);
+    const {currUser, setCurrUser} = props;
 
     const handleClick = (number) => {
         if(clickableFlags[number]){
@@ -73,6 +75,7 @@ const SelectionScreen = () => {
 
             actionQueue.push(number)
             setSelections([...selections, number]);
+            setDraftOrder([...draftOrder,number])
         }
         
         setSubmitEnabledFlag(currCount === 12)
@@ -93,6 +96,7 @@ const SelectionScreen = () => {
 
         setCurrOverlayImage(overlayNumbers[currCount-2]);
         setSubmitEnabledFlag(currCount-2 === 12)
+        draftOrder.pop();
     }
 
     const UndoButton = () => {
@@ -101,30 +105,29 @@ const SelectionScreen = () => {
         }
     }
 
-    const Clear = () => {
-        var number = 0;
-        selections.Clear();
+    async function handleSubmit(e) {
+        e.preventDefault();
+        
+        var newBody = {username:currUser.username, password: currUser.password, draftOrder: draftOrder};
+        localStorage.setItem('user', JSON.stringify(newBody))
 
-        const tempFlags = Array.from(clickableFlags);
-        tempFlags.forEach(element => {
-            element = true;
-        });
-        setClickableFlags(tempFlags)
+        await fetch(`http://localhost:5000/update/${currUser.username}`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: 
+            JSON.stringify(newBody),
+        })
 
-        setCurrCount(0);
-        const tempOverlays = Array.from(overlays);
-        tempOverlays[number] = pickedNumbers[currCount];
-        setOverlays(tempOverlays)
-
-        setCurrOverlayImage(overlayNumbers[0]);
-        setSubmitEnabledFlag(false)
+        setSubmitModalFlag(true)
+        setTimeout(5000);
     }
 
-    const ClearButton = () => {
-        if(currCount > 1){
-            return <img src={require("../Images/undo-arrow.png")} className="undo" onClick={()=>undoMove()}/>
-        }
+    const handleModalClose = () => {
+        
     }
+
 
     return (
         <>
@@ -196,10 +199,10 @@ const SelectionScreen = () => {
                 <label>Naysha Lopez</label>
             </div>
 
-            <button className={"submit" + (submitEnabledFlag ? " enabled" : " disabled")} disabled={!submitEnabledFlag} onClick={() => setSubmitModalFlag(true)}>Submit</button>
+            <button className={"submit" + (submitEnabledFlag ? " enabled" : " disabled")} disabled={!submitEnabledFlag} onClick={(e)=>handleSubmit(e)}>Submit</button>
             <UndoButton/>
         </div>
-        <SubmitEntriesModal visibleFlag={submitModalFlag} handleCloseClick={()=>setSubmitModalFlag(!submitModalFlag)}/>
+        <SubmitEntriesModal visibleFlag={submitModalFlag} handleCloseClick={()=>setSubmitModalFlag(!submitModalFlag)} currUser={currUser}/>
         </>
     );
 }

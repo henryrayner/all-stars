@@ -27,4 +27,5 @@ html, body {
 
 .lipstick {
     color: white !important;
+    position: relative;
 }

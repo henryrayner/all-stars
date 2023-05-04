@@ -1,7 +1,9 @@
 import './submitModal.css'
+import { Link } from 'react-router-dom';
 
 const SubmitEntriesModal = (props) => {
     const visibleFlag = props.visibleFlag
+    const currUser = props.currUser;
     const handleCloseClick = props.handleCloseClick
 
     return(

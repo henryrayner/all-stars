@@ -3,17 +3,54 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import './Navbar.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import LoginModal from '../Modals/LoginModal';
 import Lipstick from "./Lipstick";
 
 const Navigation = (props) => {
-    const loginVisibleFlag = props.loginVisibleFlag;
-    const setLoginVisibleFlag = props.setLoginVisibleFlag;
+    const {loginVisibleFlag, setLoginVisibleFlag, isLoggedIn, setIsLoggedIn, currUser, setCurrUser, loginMode, setLoginMode} = props;
 
-    const lipstickProps = {
-        text: 'text'
+
+    useEffect(() => {
+        
+        function updateUser() {
+            // When local storage changes, dump the list to
+            // the console.
+            const loggedInUser = JSON.parse(localStorage.getItem("user"));
+            if (loggedInUser) {
+                const foundUser = (loggedInUser);
+                setCurrUser(foundUser);
+                setIsLoggedIn(true);
+            }
+        }
+        window.addEventListener('storage', updateUser );    
+
+        return () => {
+            window.removeEventListener('storage', updateUser)
+          }
+    }, [])
+
+    async function handleLogOut() {
+        localStorage.removeItem('user');
+        setCurrUser({});
+        setLoginMode(true);
+        setIsLoggedIn(false);
     }
+
+
+    const LogInButton = (
+        !isLoggedIn && <Nav.Link href="" className="ms-auto"   onClick={() => setLoginVisibleFlag(!loginVisibleFlag)}><Lipstick text="LOG IN"/></Nav.Link>
+    )
+
+    const AccountDropdown = (
+        isLoggedIn &&
+        <NavDropdown title={<Lipstick text={currUser === "" || currUser.username === undefined ? "LOG IN" : (String)(currUser.username).toUpperCase()} />} id="basic-nav-dropdown" className="ms-auto">
+            <NavDropdown.Item href="">My Team</NavDropdown.Item>
+            <NavDropdown.Item href="">My Score</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="" onClick={()=>handleLogOut()}>Log Out</NavDropdown.Item>
+        </NavDropdown>
+    )
 
     return(
             <Navbar expand="lg" className="custom">
@@ -22,20 +59,11 @@ const Navigation = (props) => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="container-fluid">
-                    <Nav.Link href="/" className="lipstick"><Lipstick text="Home"/></Nav.Link>
-                    <Nav.Link href="/makeSelection" className="lipstick"><Lipstick text="Home"/></Nav.Link>
-                    <NavDropdown title={<img src={require("../Images/leaderboard.png")} width="125px"/>} id="basic-nav-dropdown">
-                        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.2">
-                        Another action
-                        </NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item href="#action/3.4">
-                        Separated link
-                        </NavDropdown.Item>
-                    </NavDropdown>
-                    <Nav.Link href="#link" className="ms-auto"><img src={require("../Images/mySelection.png")} width="125px" onClick={()=>setLoginVisibleFlag(!loginVisibleFlag)}/></Nav.Link>
+                    <Nav.Link href="/" className="lipstick"><Lipstick text="HOME"/></Nav.Link>
+                    {isLoggedIn && <Nav.Link href={currUser.draftOrder.length !== 0 ? `${currUser.username}-selection`:"/makeSelection"} className="lipstick"><Lipstick text="MY RANKING"/></Nav.Link>}
+                    <Nav.Link href="#link" className="lipstick" disabled={true}><Lipstick text="LEADERBOARD"/></Nav.Link>
+                    {LogInButton}
+                    {AccountDropdown}
                     </Nav>
                 </Navbar.Collapse>
                 </Container>
