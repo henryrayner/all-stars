@@ -40,10 +40,10 @@ return (
     <Navigation loginVisibleFlag={loginVisibleFlag} setLoginVisibleFlag={setLoginVisibleFlag} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} currUser={currUser} setCurrUser={setCurrUser} loginMode={loginMode} setLoginMode={setLoginMode}/>
     <Router basename="/all-stars">
       <Routes>
-        <Route exact path="/all-stars" element={<HomeScreen isLoggedIn={isLoggedIn} loginVisibleFlag={loginVisibleFlag} setLoginVisibleFlag={setLoginVisibleFlag} currUser={currUser}/>} />
-        <Route path="/all-stars/makeSelection" element={<SelectionScreen currUser = {currUser} setCurrUser={setCurrUser}/>} />
-        <Route path="/all-stars/teams" element={<TeamsScreen/>} />
-        <Route path={`/all-stars/${currUser.username}-selection`} element={<UserOrder currUser={currUser}/>}/>
+        <Route exact path="/" element={<HomeScreen isLoggedIn={isLoggedIn} loginVisibleFlag={loginVisibleFlag} setLoginVisibleFlag={setLoginVisibleFlag} currUser={currUser}/>} />
+        <Route path="/makeSelection" element={<SelectionScreen currUser = {currUser} setCurrUser={setCurrUser}/>} />
+        <Route path="/teams" element={<TeamsScreen/>} />
+        <Route path={`/${currUser.username}-selection`} element={<UserOrder currUser={currUser}/>}/>
       </Routes>
       <LoginModal visibleFlag={loginVisibleFlag} setVisibleFlag={setLoginVisibleFlag}  isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} currUser={currUser} setCurrUser={setCurrUser}loginMode={loginMode} setLoginMode={setLoginMode}/>
     </Router>
