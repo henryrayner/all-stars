@@ -74,11 +74,11 @@ const HomeScreen = (props) => {
         (!isLoggedIn && <div className='title-message'>
             Be sure to log in and select your draft picks before the first episode on May 12, 2023!
         </div>) ||
-         ((isLoggedIn && currUser.draftOrder.length == 0) && <Link to="/makeSelection"><button className='button'>
+         ((isLoggedIn && currUser.draftOrder.length == 0) && <Link to="/all-stars/makeSelection"><button className='button'>
             Select Draft
         </button></Link>) ||
 
-        ((isLoggedIn && currUser.draftOrder.length > 0) && <Link to={`${currUser.username}-selection`}><button className='button'>
+        ((isLoggedIn && currUser.draftOrder.length > 0) && <Link to={`/all-stars/${currUser.username}-selection`}><button className='button'>
         View My Ranking
         </button></Link>)
 

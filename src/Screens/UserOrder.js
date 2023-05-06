@@ -63,7 +63,7 @@ const UserOrder = (props) => {
                 {queenImgs}
             </Table>
         </div>
-        <p>If you want redo your selection, please click <Link to="/makeSelection">here.</Link></p>
+        <p>If you want redo your selection, please click <Link to="/all-stars/makeSelection">here.</Link></p>
         </>
     )
 }
