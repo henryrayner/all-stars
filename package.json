@@ -1,8 +1,10 @@
 {
   "name": "all-stars",
   "version": "0.1.0",
+  "homepage": "https://henryrayner.github.io/all-stars",
   "private": true,
   "dependencies": {
+    "-": "^0.0.1",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@mui/material": "^5.12.1",
@@ -20,6 +22,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.10.0",
     "react-scripts": "5.0.1",
+    "save-dev": "^0.0.1-security",
     "util": "^0.12.5",
     "web-vitals": "^2.1.4"
   },
@@ -27,7 +30,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +53,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^5.0.0",
     "html-loader": "^4.2.0"
   }
 }
