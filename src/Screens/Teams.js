@@ -10,7 +10,7 @@ const TeamsScreen = () => {
         let data = {};
         
         await axios.get(
-            `http://localhost:5000/record` 
+            `https://all-stars-8-henry-y5e3xhjq5q-ue.a.run.app/record` 
           ).then(function (response) {
             // handle success
             data = (response.data);

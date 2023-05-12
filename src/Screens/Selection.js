@@ -111,7 +111,7 @@ const SelectionScreen = (props) => {
         var newBody = {username:currUser.username, password: currUser.password, draftOrder: draftOrder};
         localStorage.setItem('user', JSON.stringify(newBody))
 
-        await fetch(`http://localhost:5000/update/${currUser.username}`, {
+        await fetch(`https://all-stars-8-henry-y5e3xhjq5q-ue.a.run.app/update/${currUser.username}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

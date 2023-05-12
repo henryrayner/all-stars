@@ -24,7 +24,7 @@ const HomeScreen = (props) => {
         const fifthDayOfThisWeek = firstDayOfThisWeek + 4;
         var currentFriday;
 
-        if(today.getDay() === 6)
+        if(today.getDay() === 5)
             currentFriday = new Date(today.setDate(fifthDayOfThisWeek+7));
         else
             currentFriday = new Date(today.setDate(fifthDayOfThisWeek));
@@ -51,7 +51,7 @@ const HomeScreen = (props) => {
     }
 
     const timeinterval = setInterval(() => {
-        setEndtime(new Date() < new Date(2023, 4, 12 , 3, 0, 0) ? new Date(2023, 4, 12 , 3, 0, 0)  : getFridayOfCurrentWeek());
+        setEndtime(getFridayOfCurrentWeek());
         const t = getTimeRemaining(endtime);
         setDays(t.days);
         setHours(t.hours);

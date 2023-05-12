@@ -90,7 +90,7 @@ const LoginModal = (props) => {
         let data = {};
         
         // send the username and password to the server
-        await axios.get(`http://localhost:5000/record/${person.username}`)
+        await axios.get(`https://all-stars-8-henry-y5e3xhjq5q-ue.a.run.app/record/${person.username}`)
           .then(function (response) {
             // handle success
             data = response.data;
@@ -136,7 +136,7 @@ const LoginModal = (props) => {
         newPerson.password = hash;
 
         newPerson = {...newPerson, draftOrder: []}
-        await fetch("http://localhost:5000/record/add", {
+        await fetch("https://all-stars-8-henry-y5e3xhjq5q-ue.a.run.app/record/add", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

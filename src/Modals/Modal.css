@@ -92,11 +92,15 @@ h3 {
 .login-label {
     position: relative;
     top: 10px;
-    left: -25%;
+    left: 10%;
     right: 0;
     bottom: 0;
+    margin-bottom: 10px;
+    margin-top: 10px;
     font-weight: 2;
     font-size: 14px;
+    display: block;
+    text-align: left;
 }
 
 .x-icon {
