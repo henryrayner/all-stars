@@ -9,7 +9,7 @@ const HomeScreen = (props) => {
     const [hours, setHours] = useState(0);
     const [mins, setMins] = useState(0);
     const [secs, setSecs] = useState(0);
-    const [endtime, setEndtime] = useState(new Date() < new Date(2023, 4, 12 , 20, 0, 0) ? new Date(2023, 4, 12 , 20, 0, 0)  : getFridayOfCurrentWeek())
+    const [endtime, setEndtime] = useState(new Date() < new Date(2023, 4, 12 , 3, 0, 0) ? new Date(2023, 4, 12 , 3, 0, 0)  : getFridayOfCurrentWeek())
 
     const {
         loginVisibileFlag,
@@ -28,7 +28,7 @@ const HomeScreen = (props) => {
             currentFriday = new Date(today.setDate(fifthDayOfThisWeek+7));
         else
             currentFriday = new Date(today.setDate(fifthDayOfThisWeek));
-        currentFriday.setHours(20);
+        currentFriday.setHours(3);
         currentFriday.setMinutes(0);
         currentFriday.setSeconds(0);
         return currentFriday;
@@ -51,7 +51,7 @@ const HomeScreen = (props) => {
     }
 
     const timeinterval = setInterval(() => {
-        setEndtime(new Date() < new Date(2023, 4, 12 , 20, 0, 0) ? new Date(2023, 4, 12 , 20, 0, 0)  : getFridayOfCurrentWeek());
+        setEndtime(new Date() < new Date(2023, 4, 12 , 3, 0, 0) ? new Date(2023, 4, 12 , 3, 0, 0)  : getFridayOfCurrentWeek());
         const t = getTimeRemaining(endtime);
         setDays(t.days);
         setHours(t.hours);

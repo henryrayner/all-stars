@@ -191,7 +191,7 @@ const SelectionScreen = (props) => {
             <div className="icon-container" onClick={()=>handleClick(10)}>
                 {queens[10]} 
                 {clickableFlags[10] ? currOverlayImage : overlays[10]}
-                <label>Monica Beverly Hills</label>
+                <label>Monica Beverly Hillz</label>
             </div>
             <div className="icon-container" onClick={()=>handleClick(11)}>
                 {queens[11]} 
