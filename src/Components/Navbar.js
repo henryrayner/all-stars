@@ -6,6 +6,7 @@ import './Navbar.css';
 import { useEffect, useState } from 'react';
 import LoginModal from '../Modals/LoginModal';
 import Lipstick from "./Lipstick";
+import { Link } from 'react-router-dom';
 
 const Navigation = (props) => {
     const {loginVisibleFlag, setLoginVisibleFlag, isLoggedIn, setIsLoggedIn, currUser, setCurrUser, loginMode, setLoginMode} = props;
@@ -59,9 +60,9 @@ const Navigation = (props) => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="container-fluid">
-                    <Nav.Link href={`${basename}/`} className="lipstick"><Lipstick text="HOME"/></Nav.Link>
-                    {isLoggedIn && <Nav.Link href={currUser.draftOrder.length !== 0 ? `${basename}/${currUser.username}-selection`:`${basename}/makeSelection`} className="lipstick"><Lipstick text="MY RANKING"/></Nav.Link>}
-                    <Nav.Link href="" className="lipstick" disabled={true}><Lipstick text="LEADERBOARD"/></Nav.Link>
+                    <Nav.Link as={Link} to={`${basename}/`} className="lipstick"><Lipstick text="HOME"/></Nav.Link>
+                    {isLoggedIn && <Nav.Link as={Link} to={currUser.draftOrder.length !== 0 ? `${basename}/${currUser.username}-selection`:`${basename}/makeSelection`} className="lipstick"><Lipstick text="MY RANKING"/></Nav.Link>}
+                    <Nav.Link as={Link} to="/" className="lipstick" disabled={true}><Lipstick text="LEADERBOARD"/></Nav.Link>
                     {LogInButton}
                     {AccountDropdown}
                     </Nav>
