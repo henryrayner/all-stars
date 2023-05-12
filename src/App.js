@@ -2,7 +2,7 @@ import './App.css';
 import Navigation from './Components/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HomeScreen from './Screens/Home';
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SelectionScreen from './Screens/Selection';
 import TeamsScreen from './Screens/Teams';
 import { useState, useEffect } from 'react';
@@ -38,7 +38,7 @@ return (
   <>
     {/* This is the alias of BrowserRouter i.e. Router */}
     <Navigation loginVisibleFlag={loginVisibleFlag} setLoginVisibleFlag={setLoginVisibleFlag} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} currUser={currUser} setCurrUser={setCurrUser} loginMode={loginMode} setLoginMode={setLoginMode}/>
-    <Router>
+    <Router basename="/all-stars">
       <Routes>
         <Route path="/" element={<HomeScreen isLoggedIn={isLoggedIn} loginVisibleFlag={loginVisibleFlag} setLoginVisibleFlag={setLoginVisibleFlag} currUser={currUser}/>} />
         <Route path="/makeSelection" element={<SelectionScreen currUser = {currUser} setCurrUser={setCurrUser}/>} />
