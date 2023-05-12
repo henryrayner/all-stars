@@ -56,12 +56,12 @@ const Navigation = (props) => {
     return(
             <Navbar expand="lg" className="custom">
                 <Container className="container-fluid">
-                <Navbar.Brand href={`${basename}/`} className='logo'><img src={require("../Images/rupaul-logo.png")} width="55px" className='logo'/></Navbar.Brand>
+                <Navbar.Brand as={Link} to={`/`} className='logo'><img src={require("../Images/rupaul-logo.png")} width="55px" className='logo'/></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="container-fluid">
-                    <Nav.Link as={Link} to={`${basename}/`} className="lipstick"><Lipstick text="HOME"/></Nav.Link>
-                    {isLoggedIn && <Nav.Link as={Link} to={currUser.draftOrder.length !== 0 ? `${basename}/${currUser.username}-selection`:`${basename}/makeSelection`} className="lipstick"><Lipstick text="MY RANKING"/></Nav.Link>}
+                    <Nav.Link as={Link} to={`/`} className="lipstick"><Lipstick text="HOME"/></Nav.Link>
+                    {isLoggedIn && <Nav.Link as={Link} to={currUser.draftOrder.length !== 0 ? `/${currUser.username}-selection`:`/makeSelection`} className="lipstick"><Lipstick text="MY RANKING"/></Nav.Link>}
                     <Nav.Link as={Link} to="/" className="lipstick" disabled={true}><Lipstick text="LEADERBOARD"/></Nav.Link>
                     {LogInButton}
                     {AccountDropdown}
