@@ -55,11 +55,11 @@ const Navigation = (props) => {
     return(
             <Navbar expand="lg" className="custom">
                 <Container className="container-fluid">
-                <Navbar.Brand href="/" className='logo'><img src={require("../Images/rupaul-logo.png")} width="55px" className='logo'/></Navbar.Brand>
+                <Navbar.Brand href="#/" className='logo'><img src={require("../Images/rupaul-logo.png")} width="55px" className='logo'/></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="container-fluid">
-                    <Nav.Link href="/" className="lipstick"><Lipstick text="HOME"/></Nav.Link>
+                    <Nav.Link href="#/" className="lipstick"><Lipstick text="HOME"/></Nav.Link>
                     {isLoggedIn && <Nav.Link href={currUser.draftOrder.length !== 0 ? `#/${currUser.username}-selection`:"#/makeSelection"} className="lipstick"><Lipstick text="MY RANKING"/></Nav.Link>}
                     <Nav.Link href="" className="lipstick" disabled={true}><Lipstick text="LEADERBOARD"/></Nav.Link>
                     {LogInButton}
