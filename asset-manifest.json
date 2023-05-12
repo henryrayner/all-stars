@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/all-stars/static/css/main.f6e3a80e.css",
-    "main.js": "/all-stars/static/js/main.ff28ac4c.js",
+    "main.js": "/all-stars/static/js/main.75d6e613.js",
     "static/js/787.b015a763.chunk.js": "/all-stars/static/js/787.b015a763.chunk.js",
     "static/media/main-image.jpeg": "/all-stars/static/media/main-image.5525c7c55f76df6d3288.jpeg",
     "static/media/rupaul-logo.png": "/all-stars/static/media/rupaul-logo.2a4d820012902e6265bf.png",
@@ -34,11 +34,11 @@
     "static/media/jaymes.jpeg": "/all-stars/static/media/jaymes.e6c84a435208f65648e9.jpeg",
     "index.html": "/all-stars/index.html",
     "main.f6e3a80e.css.map": "/all-stars/static/css/main.f6e3a80e.css.map",
-    "main.ff28ac4c.js.map": "/all-stars/static/js/main.ff28ac4c.js.map",
+    "main.75d6e613.js.map": "/all-stars/static/js/main.75d6e613.js.map",
     "787.b015a763.chunk.js.map": "/all-stars/static/js/787.b015a763.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f6e3a80e.css",
-    "static/js/main.ff28ac4c.js"
+    "static/js/main.75d6e613.js"
   ]
 }
