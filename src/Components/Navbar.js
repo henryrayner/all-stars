@@ -61,8 +61,8 @@ const Navigation = (props) => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="container-fluid">
                     <Nav.Link as={Link} to={`/`} className="lipstick"><Lipstick text="HOME"/></Nav.Link>
-                    {isLoggedIn && <Nav.Link as={Link} to={currUser.draftOrder.length !== 0 ? `/${currUser.username}-selection`:`/makeSelection`} className="lipstick"><Lipstick text="MY RANKING"/></Nav.Link>}
-                    <Nav.Link as={Link} to="/" className="lipstick" disabled={true}><Lipstick text="LEADERBOARD"/></Nav.Link>
+                    {isLoggedIn && <Nav.Link as={Link} to={currUser.draftOrder.length !== 0 ? `/${currUser.username}-selection`:`/makeSelection`} className="lipstick"><Lipstick text="MY TEAM"/></Nav.Link>}
+                    <Nav.Link as={Link} to="/" className="lipstick"><Lipstick text="LEADERBOARD"/></Nav.Link>
                     {LogInButton}
                     {AccountDropdown}
                     </Nav>

@@ -8,6 +8,7 @@ import TeamsScreen from './Screens/Teams';
 import { useState, useEffect } from 'react';
 import LoginModal from './Modals/LoginModal';
 import UserOrder from './Screens/UserOrder';
+import TeamScreen from './Screens/Team';
 
 function App() {
   const [loginVisibleFlag, setLoginVisibleFlag] = useState(false);
@@ -43,7 +44,7 @@ return (
         <Route path="/" element={<HomeScreen isLoggedIn={isLoggedIn} loginVisibleFlag={loginVisibleFlag} setLoginVisibleFlag={setLoginVisibleFlag} currUser={currUser}/>} />
         <Route path="/makeSelection" element={<SelectionScreen currUser = {currUser} setCurrUser={setCurrUser}/>} />
         <Route path="/teams" element={<TeamsScreen/>} />
-        <Route path={`/${currUser.username}-selection`} element={<UserOrder currUser={currUser}/>}/>
+        <Route path={`/${currUser.username}-selection`} element={<TeamScreen currUser={currUser}/>}/>
       </Routes>
       <LoginModal visibleFlag={loginVisibleFlag} setVisibleFlag={setLoginVisibleFlag}  isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} currUser={currUser} setCurrUser={setCurrUser}loginMode={loginMode} setLoginMode={setLoginMode}/>
     </BrowserRouter>

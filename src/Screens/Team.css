@@ -1,0 +1,36 @@
+.member-container {
+    position: relative;
+    width: 200px;
+    min-height: 200px;
+    margin:15px !important;
+    border-radius: 20%;
+    display: inline-block;
+    margin-bottom: 50px !important; 
+}
+
+.member-icon {
+    width: 200px;
+    min-height: 200px;
+    background-color: white;
+    border-radius: 20%;
+    display: inline-block;
+    z-index: 1;
+    border: 10px outset #FF3797;
+}
+
+label {
+    position:absolute;
+    top: 210px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    line-height: 1;
+    font-weight: 800;
+    font-size: 1.4rem;
+}
+
+.eliminated {
+    filter: grayscale(100%);
+
+  }
+  
